@@ -1,8 +1,8 @@
---- 
+---
 
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <!-- begin::Head -->
 
 <head>
@@ -19,11 +19,12 @@
             google: {
                 "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"]
             },
-            active: function () {
+            active: function() {
                 sessionStorage.fonts = true;
             }
         });
-    </script> {% include favicon.html %}
+    </script>
+    {% include favicon.html %}
     <link rel="manifest" href="/manifest.json">
     <!--end::Web font -->
 
@@ -89,8 +90,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover"
-                                aria-expanded="true">
+                            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
                                 <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
                                     <i class="la la-plus m--hide"></i>
                                     <i class="la la-ellipsis-h"></i>
@@ -149,10 +149,7 @@
                             <i class="flaticon-exclamation m--font-brand"></i>
                         </div>
                         <div class="m-alert__text">
-                            DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive
-                            enhancement, and will add advanced interaction controls to any HTML table. For more info see
-                            <a href="https://datatables.net/" target="_blank">the official home</a>
-                            of the plugin.
+                            You can use the dom initialisation parameter to move DataTables features around the table to where you want them. See official documentation <a href="https://datatables.net/examples/advanced_init/dom_multiple_elements.html" target="_blank">here</a>.
                         </div>
                     </div>
                     <div class="m-portlet m-portlet--mobile">
@@ -160,24 +157,23 @@
                             <div class="m-portlet__head-caption">
                                 <div class="m-portlet__head-title">
                                     <h3 class="m-portlet__head-text">
-                                        Basic Example
+                                        Multiple Controls
                                     </h3>
                                 </div>
                             </div>
                             <div class="m-portlet__head-tools">
                                 <ul class="m-portlet__nav">
                                     <li class="m-portlet__nav-item">
-                                        <a href="#" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                                        <a href="/manage/new" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air">
                                             <span>
                                                 <i class="la la-plus"></i>
-                                                <span>New record</span>
+                                                <span>New Property</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li class="m-portlet__nav-item"></li>
                                     <li class="m-portlet__nav-item">
-                                        <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover"
-                                            aria-expanded="true">
+                                        <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
                                             <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
                                                 <i class="la la-ellipsis-h m--font-brand"></i>
                                             </a>
@@ -191,9 +187,9 @@
                                                                     <span class="m-nav__section-text">Quick Actions</span>
                                                                 </li>
                                                                 <li class="m-nav__item">
-                                                                    <a href="" class="m-nav__link">
-                                                                        <i class="m-nav__link-icon flaticon-share"></i>
-                                                                        <span class="m-nav__link-text">Create Post</span>
+                                                                    <a href="/manage/new" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon la la-plus"></i>
+                                                                        <span class="m-nav__link-text">Add New Property</span>
                                                                     </a>
                                                                 </li>
                                                                 <li class="m-nav__item">
@@ -334,8 +330,8 @@
                 </div>
             </div>
 
-
         </div>
+        <!-- end:: Body -->
 
         {% include footer.html %}
 
@@ -347,7 +343,7 @@
         <i class="la la-arrow-up"></i>
     </div>
     <!-- end::Scroll Top -->
-
+    
     <!--begin::Base Scripts -->
     <script src="/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
     <script src="/assets/default/base/scripts.bundle.js" type="text/javascript"></script>
@@ -358,7 +354,7 @@
     <!--end::Page Vendors Scripts -->
 
     <!--begin::Page Resources -->
-    <script src="/assets/default/custom/crud/datatables/manage.js" type="text/javascript"></script>
+    <script src="/assets/default/custom/crud/datatables/advanced/multiple-controls.js" type="text/javascript"></script>
     <!--end::Page Resources -->
 
 </body>

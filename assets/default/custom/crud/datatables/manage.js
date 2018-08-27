@@ -1,12 +1,16 @@
-var DatatablesAdvancedMultipleControls = {
-	init: function ()
-	{
-		$("#m_table_1").DataTable(
-		{
-			responsive: !0,
-			dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
-			columnDefs: [
-			{
+var DatatablesBasicBasic = {
+    init: function() {
+      var e;
+      (e = $("#m_table_1")).DataTable({
+        responsive: !0,
+        dom:
+          "<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>",
+        lengthMenu: [5, 10, 25, 50],
+        pageLength: 10,
+        language: { lengthMenu: "Display _MENU_" },
+        order: [[0, "desc"]],
+        columnDefs: [
+            {
 				targets: -1,
 				title: "Actions",
 				orderable: !1,
@@ -82,11 +86,34 @@ var DatatablesAdvancedMultipleControls = {
 					};
 					return void 0 === l[a] ? a : '<span class="m-badge m-badge--' + l[a].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + l[a].state + '">' + l[a].title + "</span>"
 				}
-			}]
-		})
-	}
-};
-jQuery(document).ready(function ()
-{
-	DatatablesAdvancedMultipleControls.init()
-});
+			}
+        ]
+      }),
+        e.on("change", ".m-group-checkable", function() {
+          var e = $(this)
+              .closest("table")
+              .find("td:first-child .m-checkable"),
+            a = $(this).is(":checked");
+          $(e).each(function() {
+            a
+              ? ($(this).prop("checked", !0),
+                $(this)
+                  .closest("tr")
+                  .addClass("active"))
+              : ($(this).prop("checked", !1),
+                $(this)
+                  .closest("tr")
+                  .removeClass("active"));
+          });
+        }),
+        e.on("change", "tbody tr .m-checkbox", function() {
+          $(this)
+            .parents("tr")
+            .toggleClass("active");
+        });
+    }
+  };
+  jQuery(document).ready(function() {
+    DatatablesBasicBasic.init();
+  });
+  
